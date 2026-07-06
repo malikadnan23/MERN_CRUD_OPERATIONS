@@ -34,7 +34,7 @@ const getUser =async (req, res) => {
         const id = req.params.id
         const userExist = await User.findById(id)
         if (!userExist) {
-            return res.status(404).json({message:"User does not exist"})
+            return res.status(404).json({message:"User Not Found"})
         }
         res.status(200).json(userExist)
     }
@@ -45,11 +45,34 @@ const getUser =async (req, res) => {
 
 const updateUser =async (req, res) => {
     try {
-        
+        const id = req.params.id
+        const userExist = await User.findById(id)
+        if (!userExist) {
+            res.status(404).json({message:"User Not Found"})
+        }
+    const updatedUser = await User.findByIdAndUpdate(id, req.body, {
+            new:true
+    })
+        res.status(200).json(updatedUser)
     }
     catch(error) {
         res.status(500).json({errorMessage:error.message})
     }
 }
 
-module.exports = {createUser,getUsers,getUser,updateUser}
+const deleteUser =async (req, res) => {
+    try {
+        const id = req.params.id
+        const userExist = await User.findById(id)
+        if (!userExist) {
+            res.status(404).json({message:"User Not Found"})
+        }
+        await User.findByIdAndDelete(id)
+        res.status(200).json({message:"User deleted successsully"})
+    }
+    catch(error) {
+        res.status(500).json({errorMessage:error.message})
+    }
+}
+
+module.exports = {createUser,getUsers,getUser,updateUser,deleteUser}
