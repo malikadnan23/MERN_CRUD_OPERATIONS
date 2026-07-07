@@ -1,0 +1,35 @@
+.adduser{
+      margin: 100px auto ;
+    padding: 40px;
+    background-color: white;
+    border-radius: 6px;
+    width: 25%;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+.adduser h3{
+    font-size: 26px;
+    font-weight: 700;
+}
+.AddUserForm{
+    display: flex;
+    align-items: start;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+}
+.AddUserForm .inputGroup{
+    display: flex;
+    width: 100%;
+    gap: 3px;
+    flex-direction: column;
+}
+.inputGroup input{
+    
+    outline: none;
+    padding: 4px 8px;
+    border-radius: 6px;
+    border: 1px solid #555;
+}
+.AddUserForm .btn{
+    margin-top: 10px;
+}

@@ -1,0 +1,24 @@
+.usertable{
+    margin: 100px auto ;
+    padding: 40px;
+    background-color: white;
+    border-radius: 6px;
+    width: 60%;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+.btn{
+    margin-bottom: 30px;
+    
+}
+.btn i{
+    width: 10px;
+    height: 10px;
+}
+.fa-pen-to-square{
+    color: green;
+    cursor: pointer;
+}
+.fa-trash{
+    color: red;
+    cursor: pointer;
+}
