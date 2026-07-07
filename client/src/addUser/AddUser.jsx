@@ -45,7 +45,7 @@ const AddUser = () => {
           <label htmlFor="name">Address</label>
           <input type="text" name="address" onChange={inputHandler} autoComplete='off' placeholder="Enter your Address" required/>
         </div>
-        <button type="submit"  class="btn btn-primary">Add New User</button>
+        <button type="submit"  class="btn btn-primary">Add New Player</button>
       </form>
     </div>
   )

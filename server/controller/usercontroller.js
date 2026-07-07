@@ -7,10 +7,11 @@ const createUser =async (req, res) => {
 
         const UserExist = await User.findOne({email})
         if (UserExist) {
-          return  res.status(400).json({message:"User Already Exists"})
+          return  res.status(400).json({message:"Player Already Exists"})
         }
         const savedData = await newUser.save()
-        res.status(200).json({savedData})
+        // res.status(200).json({ savedData })
+        res.status(200).json({message:"Player Added Successfully"})
     }
     catch(error) {
         res.status(500).json({errorMessage:error.message})
@@ -53,7 +54,8 @@ const updateUser =async (req, res) => {
     const updatedUser = await User.findByIdAndUpdate(id, req.body, {
             new:true
     })
-        res.status(200).json(updatedUser)
+        // res.status(200).json(updatedUser)
+        res.status(200).json({message:"Player Updated Successfully"})
     }
     catch(error) {
         res.status(500).json({errorMessage:error.message})
@@ -68,7 +70,7 @@ const deleteUser =async (req, res) => {
             res.status(404).json({message:"User Not Found"})
         }
         await User.findByIdAndDelete(id)
-        res.status(200).json({message:"User deleted successsully"})
+        res.status(200).json({message:"Player deleted successsully"})
     }
     catch(error) {
         res.status(500).json({errorMessage:error.message})

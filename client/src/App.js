@@ -9,7 +9,7 @@ function App() {
       <Routes>
         <Route path="/" element={ <GetUser/>} />
         <Route path="/adduser" element={ <AddUser/>} />
-        <Route path="/updateuser" element={ <UpdateUser/>} />
+        <Route path="/update/:id" element={ <UpdateUser/>} />
 
     </Routes>
       

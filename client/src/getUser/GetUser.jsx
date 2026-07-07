@@ -3,6 +3,7 @@ import './getuser.css'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
 import toast from 'react-hot-toast'
+
 const GetUser = () => {
     const [users, setUsers] = useState([])
     useEffect(() => {
@@ -29,11 +30,11 @@ const GetUser = () => {
     }
   return (
       <div className="usertable">
-       <Link to="/adduser"><button type="button" class="btn btn-primary">Add User <i class="fa-solid fa-user"></i></button></Link>   
+       <Link to="/adduser"><button type="button" class="btn btn-primary">Add Player <i class="fa-solid fa-user"></i></button></Link>   
           {users.length === 0 ? (
               <div className='noData'>
-                  <h2>No Data to Display</h2>
-                  <p>Please Add Some Users</p>
+                  <h2>No FiFa Player added</h2>
+                  <p>Please Add Some Players</p>
               </div>
           ): (
              <table className="table table-bordered">
@@ -55,7 +56,7 @@ const GetUser = () => {
                                   <td>{user.name}</td>
       <td>{user.email}</td>
       <td>{user.address}</td>
-      <td><Link to={'/updateuser'}><i class="fa-solid fa-pen-to-square"></i></Link>  | <i onClick={()=>deleteUser(user._id)} class="fa-solid fa-trash"></i></td>
+      <td><Link to={'/update/'+user._id}><i class="fa-solid fa-pen-to-square"></i></Link>  | <i onClick={()=>deleteUser(user._id)} class="fa-solid fa-trash"></i></td>
     </tr>
                           )
                       })
