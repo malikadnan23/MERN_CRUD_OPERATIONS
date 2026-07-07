@@ -1,6 +1,7 @@
 import AddUser from "./addUser/AddUser";
 import GetUser from "./getUser/GetUser";
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import UpdateUser from "./updateUser/UpdateUser";
 
 function App() {
   return (
@@ -8,6 +9,7 @@ function App() {
       <Routes>
         <Route path="/" element={ <GetUser/>} />
         <Route path="/adduser" element={ <AddUser/>} />
+        <Route path="/updateuser" element={ <UpdateUser/>} />
 
     </Routes>
       

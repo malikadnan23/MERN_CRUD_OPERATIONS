@@ -19,6 +19,10 @@
     cursor: pointer;
 }
 .fa-trash{
-    color: red;
+    color: #e74c3c;
     cursor: pointer;
+}
+.noData{
+    text-align: center;
+    margin-top: 20px;
 }
